@@ -1,8 +1,7 @@
 package hello
 
-/**
-Hello Actions
- */
+
+// Hello Actions
 func Hello() string {
 	return "Hello Actions"
 }
