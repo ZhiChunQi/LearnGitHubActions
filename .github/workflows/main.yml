@@ -21,3 +21,22 @@ jobs:
           export PATH=$PATH:$(go env GOPATH)/bin
           go get -u golang.org/x/lint/golint
           make lint
+          
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.12
+          
+      - name: Check Out Code
+        uses: actions/checkout@v1
+      - name: Run Unit Tests
+        run: make test-coverage
+      - name: Upload Coverage Report To CodeCov
+        uses: codecov/codecov-action@v1.0.0
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage.txt
