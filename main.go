@@ -1,8 +1,8 @@
 package main
 
 import (
-	"ZhiChunQi/LearnGitHubActions/hello"
 	"fmt"
+	"github.com/ZhiChunQi/LearnGitHubActions/hello"
 )
 
 func main() {
