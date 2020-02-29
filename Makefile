@@ -23,7 +23,7 @@ test-coverage: ## Run tests with coverage
 	@go test -short -coverprofile cover.out -covermode=atomic ${PKG_LIST}
 	@cat cover.out >> coverage.txt
 
-build: dep ## Build the binary file
+build: ## Build the binary file
 	@go build -i -o build/main $(PKG)
 
 clean: ## Remove previous build
