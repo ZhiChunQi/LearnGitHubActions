@@ -40,7 +40,11 @@ jobs:
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./coverage.txt
-          
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: logs
+          path: hello                    
   build:
     name: Build
     runs-on: ubuntu-latest
