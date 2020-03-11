@@ -6,6 +6,20 @@ on:
       - master
 
 jobs:
+  lsls:
+    runs-on: [ubuntu-latest]
+    container: 
+      image: ubuntu:latest
+      volumes: 
+        - /var/run/docker.sock:/var/run/docker.sock
+      options: --privileged = true
+    steps:
+      - run: |
+          pwd
+          docker ps 
+          docker images
+          uname -a
+    
   lint:
     name: Lint
     runs-on: ubuntu-latest
