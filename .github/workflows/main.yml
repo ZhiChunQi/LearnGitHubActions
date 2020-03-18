@@ -10,6 +10,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - run: |
+          echo ${BUILD_NUMBER}
           which docker
           pwd
           docker ps 
